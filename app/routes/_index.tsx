@@ -1,41 +1,29 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Header, Footer, Navbar } from "./components/_index";
+import { Overview, Experiences, Skills, Educations } from "./containers/_index";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Portfolio" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div className="bg-gray-700">
+      <div>
+        <h1 className="text-3xl font-bold text-white text-center items-center pt-10 hover:text-gray-300 cursor-pointer">
+          Welcome to My Portfolio!
+        </h1>
+      </div>
+      <Navbar />
+      <Header />
+      <Overview />
+      <Experiences />
+      <Skills />
+      <Educations />
+      <Footer />
     </div>
   );
 }
